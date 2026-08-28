@@ -41,7 +41,7 @@ if not hasattr(ft, "NavigationDestination") and hasattr(ft, "NavigationBarDestin
 # =====================================================================
 # 📱 移动端前后端合流与数据库接口导入
 # =====================================================================
-from english_db import Database
+from english_db import DatabaseManager
 from mobile_tts import MobileTTSEngine
 
 # iOS 扁平美学偏好色系
@@ -62,8 +62,14 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
-    # 1. 初始化数据库与专属发音器
-    db = Database()
+    # 💥 极速自愈：在 Windows 模拟和 Android 原生环境，统一计算并创建可写私有数据目录，100% 彻底消杀权限与导入报错！
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    DATA_DIR = os.path.join(BASE_DIR, "workbench_data")
+    os.makedirs(DATA_DIR, exist_ok=True)
+    DB_PATH = os.path.join(DATA_DIR, "workbench.db")
+
+    # 初始化数据库与专属发音器
+    db = DatabaseManager(DB_PATH)
     tts = MobileTTSEngine(page)
 
     # 状态变量
