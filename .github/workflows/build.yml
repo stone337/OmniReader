@@ -32,6 +32,10 @@ jobs:
         with:
           flutter-version: '3.19.x'
 
+      - name: 5.5 全自动同意谷歌 Android SDK 所有安全许可协议 (💥 核心必杀技！)
+        run: |
+          yes | flutter doctor --android-licenses
+
       - name: 6. 开启云端 Flet 一键编译安卓 APK (100% 原生)
         run: |
           # 💥 调用 Python 模块路径，100% 绕过 Linux 环境变量找不到命令的硬伤！
