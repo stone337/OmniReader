@@ -1,0 +1,47 @@
+# =====================================================================
+# 📱 English OmniReader 手机端打包绝对物理隔离图纸 (.fletignore)
+# 彻底排除一切 Windows 电脑端专用的 tkinter / win32 冲突包，保障 100% 纯净度！
+# =====================================================================
+
+# 1. 忽略所有 Windows 电脑端专用 pristine 源码
+english_reader_app.py
+english_ui.py
+tts_engine.py
+workbench.py
+database_manager.py
+docepub2.py
+doctools.py
+docxtoepub.py
+epubmerger.py
+jsondoc.py
+ocrpe.py
+reader_engine.py
+wordfilter.py
+
+# 2. 忽略所有 Windows 物理脚本、环境依赖与 Spec 配置文件
+启动阅读器.bat
+个人研习工作台.spec
+启动手机版模拟器.bat
+一键准备云打包.bat
+requirements.txt
+__pycache__/
+.git/
+.github/
+
+# 3. 忽略临时编译产物与重置缓存
+build/
+dist/
+backup/
+ext_temp/
+apk/
+tcm/
+
+# 4. 忽略本地测试的无用大 MP3 音频与文档
+*.mp3
+*.png
+*.docx
+*.pdf
+*.xls
+*.epub
+*.json
+*.txt
