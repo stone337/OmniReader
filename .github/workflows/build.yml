@@ -35,7 +35,7 @@ jobs:
       - name: 5. 自动拉起谷歌 Flutter 编译引擎
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.24.x'
+          flutter-version: '3.22.x'
 
       - name: 5.5 全自动同意谷歌 Android SDK 所有安全许可协议 (💥 核心必杀技！)
         run: |
