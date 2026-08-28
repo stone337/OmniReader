@@ -1,4 +1,5 @@
 flet
+flet-audio
 edge-tts
 python-docx
 ebooklib

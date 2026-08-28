@@ -7,6 +7,7 @@ import asyncio
 import edge_tts
 import re
 import flet as ft
+import flet_audio as fta
 
 def filter_english_only(text):
     """过滤掉文本中的所有中文字符与中文特殊标点，仅保留英文、数字、空格及正常英文断句标点。"""
@@ -40,7 +41,7 @@ class MobileTTSEngine:
         self.is_online = True
         
         # 💥 核心：使用 Flet 原生音频播放控件（底层由 Android MediaPlayer 提供 100% 极速并发支持）
-        self.audio_player = ft.Audio(src="", autoplay=True)
+        self.audio_player = fta.Audio(src="", autoplay=True)
         # 将音频控件挂载在页面最顶层 Overlay
         self.page.overlay.append(self.audio_player)
         self.page.update()
