@@ -38,8 +38,8 @@ jobs:
 
       - name: 6. 开启云端 Flet 一键编译安卓 APK (100% 原生)
         run: |
-          # 💥 调用 Flet 官方标准的物理命令行，系统会自动识别 main.py 并拉起编译！
-          flet build apk
+          # 💥 管道强签同意：通过 yes 管道自动同意 Flet 自带要求的特定 Flutter 版本下载，一击通关！
+          yes | flet build apk
 
       - name: 7. 上传编译成功的 APK 到云端 Artifacts 归档中
         uses: actions/upload-artifact@v4
