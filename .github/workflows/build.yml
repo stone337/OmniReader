@@ -42,8 +42,12 @@ jobs:
           yes | flutter doctor --android-licenses
 
       - name: 6. 开启云端 Flet 一键编译安卓 APK (100% 原生)
+        env:
+          AIOHTTP_NO_EXTENSIONS: 1
+          YARL_NO_EXTENSIONS: 1
+          MULTIDICT_NO_EXTENSIONS: 1
         run: |
-          # 💥 稳定版极速编译：使用标准的一键打包，0.23.2 的下载链接 100% 畅通稳定，直接秒速冲线！
+          # 💥 架构锁死与纯 Python 自愈编译：100% 绕过 C-Extensions 限制，直接冲线通关！
           yes | flet build apk
 
       - name: 7. 上传编译成功的 APK 到云端 Artifacts 归档中
