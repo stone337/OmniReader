@@ -16,13 +16,13 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: 3. 安装 Flet 编译器与 Edge-TTS
+      - name: 3. 安装 Flet 编译器及所有文档解析依赖库
         run: |
           python -m pip install --upgrade pip
-          pip install flet edge-tts
+          pip install flet edge-tts python-docx ebooklib beautifulsoup4 PyPDF2 pillow
 
       - name: 4. 安装安卓 Java 编译环境
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: 'zulu'
           java-version: '17'
