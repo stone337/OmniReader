@@ -47,8 +47,8 @@ jobs:
           YARL_NO_EXTENSIONS: 1
           MULTIDICT_NO_EXTENSIONS: 1
         run: |
-          # 💥 架构锁死与纯 Python 自愈编译：100% 绕过 C-Extensions 限制，直接冲线通关！
-          yes | flet build apk
+          # 💥 强制捆绑：使用 --include-packages flet_audio 强行把原生播放引擎编译进 APK！一击通关发声！
+          yes | flet build apk --include-packages flet_audio
 
       - name: 7. 上传编译成功的 APK 到云端 Artifacts 归档中
         uses: actions/upload-artifact@v4
