@@ -38,8 +38,8 @@ jobs:
 
       - name: 6. 开启云端 Flet 一键编译安卓 APK (100% 原生)
         run: |
-          # 💥 架构锁死自愈：指定只为现代 64 位芯片 (arm64-v8a) 打包，跳过损坏的老芯片下载，4 倍速无损冲线！
-          yes | flet build apk --arch arm64-v8a
+          # 💥 稳定版极速编译：使用标准的一键打包，0.23.2 的下载链接 100% 畅通稳定，直接秒速冲线！
+          yes | flet build apk
 
       - name: 7. 上传编译成功的 APK 到云端 Artifacts 归档中
         uses: actions/upload-artifact@v4
