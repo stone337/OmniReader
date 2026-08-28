@@ -1,3 +1,0 @@
-edge-tts
-beautifulsoup4
-PyPDF2
