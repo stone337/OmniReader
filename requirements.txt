@@ -1,0 +1,7 @@
+flet
+edge-tts
+python-docx
+ebooklib
+beautifulsoup4
+PyPDF2
+pillow

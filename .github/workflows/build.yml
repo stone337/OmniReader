@@ -34,8 +34,8 @@ jobs:
 
       - name: 6. 开启云端 Flet 一键编译安卓 APK (100% 原生)
         run: |
-          # 💥 调用 Flet 官方打包指令，自动识别并加载 main.py，完美编译
-          flet build apk
+          # 💥 调用 Python 模块路径，100% 绕过 Linux 环境变量找不到命令的硬伤！
+          python -m flet build apk
 
       - name: 7. 上传编译成功的 APK 到云端 Artifacts 归档中
         uses: actions/upload-artifact@v4
