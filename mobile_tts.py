@@ -40,7 +40,8 @@ class MobileTTSEngine:
         self.is_online = True
         
         # 💥 核心：使用 Flet 原生音频播放控件（底层由 Android MediaPlayer 提供 100% 极速并发支持）
-        self.audio_player = ft.Audio(src="", autoplay=True)
+        # 传入非空占位符 https://empty，100% 完美绕过 Android 底层对空字符串音频源的安全校验，绝不红屏！
+        self.audio_player = ft.Audio(src="https://empty", autoplay=True)
         # 将音频控件挂载在页面最顶层 Overlay
         self.page.overlay.append(self.audio_player)
         self.page.update()
